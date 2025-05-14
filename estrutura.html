@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Estrutura - Pousada Patrimônio de Brotas</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="header-bg">
+      <div class="container">
+        <img
+          src="imagens/topo2.png"
+          alt="Pousada Patrimônio de Brotas"
+          class="img-fluid"
+        />
+      </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+      <div class="container">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100 justify-content-between gap-3">
+            <li class="nav-item flex-fill">
+              <a class="nav-link btn btn-success text-white" href="index.html"
+                >Início</a
+              >
+            </li>
+            <li class="nav-item flex-fill">
+              <a
+                class="nav-link btn btn-success text-white"
+                href="reservas.html"
+                >Reservas</a
+              >
+            </li>
+            <li class="nav-item flex-fill">
+              <a class="nav-link btn btn-success text-white" href="contato.html"
+                >Contato</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container my-5 main-content">
+      <section class="structure">
+        <h1 class="text-center mb-4">Nossa Estrutura</h1>
+
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <div class="description mb-5">
+              <p class="lead">
+                A Pousada Patrimônio de Brotas conta com 10 quartos equipados
+                com:
+              </p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Banheiros privativos</li>
+                <li class="list-group-item">Ar condicionado</li>
+                <li class="list-group-item">Frigobar</li>
+                <li class="list-group-item">Café da manhã incluído</li>
+              </ul>
+            </div>
+
+            <div
+              id="structureCarousel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="image-container">
+                    <img
+                      src="imagens/fachada.jpeg"
+                      class="d-block"
+                      alt="Fachada da pousada"
+                    />
+                  </div>
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Fachada Aconchegante</h5>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="image-container">
+                    <img
+                      src="imagens/quartos.jpeg"
+                      class="d-block"
+                      alt="Quartos da pousada"
+                    />
+                  </div>
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Quartos Confortáveis</h5>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="image-container">
+                    <img
+                      src="imagens/cafe.jpeg"
+                      class="d-block"
+                      alt="Café da manhã"
+                    />
+                  </div>
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Café da Manhã Completo</h5>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#structureCarousel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Anterior</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#structureCarousel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Próximo</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-dark text-white py-4">
+      <div class="container text-center">
+        <p class="mb-0">
+          &copy; 2024 Pousada Patrimônio de Brotas - Todos os direitos
+          reservados
+        </p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.min.js"
+      integrity="sha384-VQqxDN0EQCkWoxt/0vsQvZswzTHUVOImccYmSyhJTp7kGtPed0Qcx8rK9h9YEgx+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

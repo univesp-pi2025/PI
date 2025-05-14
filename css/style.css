@@ -1,0 +1,235 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css");
+
+:root {
+  --bs-body-font-family: "Arial", sans-serif;
+  --verde-escuro: #2c5f2d;
+  --verde-claro: #9be5a1;
+  --sombra: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* HEADER */
+.header-bg {
+  background-color: var(--verde-claro);
+  padding: 20px 0;
+  box-shadow: var(--sombra);
+}
+
+.header-bg .container {
+  text-align: center;
+}
+
+.header-bg img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block; /* Centraliza horizontalmente */
+}
+
+/*  NAVEGAÇÃO  */
+.navbar {
+  border-bottom: 3px solid var(--verde-escuro);
+}
+
+.navbar-nav {
+  width: 100%;
+  gap: 15px;
+}
+
+.nav-item {
+  flex: 1;
+  min-width: 200px;
+}
+
+.nav-link.btn {
+  width: 100%;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.nav-link.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sombra);
+  border-color: #fff;
+}
+
+.navbar-toggler {
+  border-color: var(--verde-escuro);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(44, 95, 45, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+h1 {
+  color: var(--verde-escuro);
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.lead {
+  line-height: 1.8;
+  text-align: justify;
+  font-size: 1.1rem;
+}
+
+/*  BOTÕES  */
+.btn-success {
+  background-color: var(--verde-escuro);
+  border-color: var(--verde-escuro);
+  padding: 12px 25px;
+}
+
+.btn-success:hover {
+  background-color: #1e401f;
+  border-color: #1e401f;
+}
+
+/*  VÍDEO  */
+.video-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  margin: 2rem 0;
+}
+
+.video-container {
+  background: transparent;
+}
+
+footer {
+  margin-top: 4rem;
+  padding: 2rem 0;
+}
+
+/*  RESPONSIVIDADE  */
+@media (max-width: 768px) {
+  .nav-item {
+    min-width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .nav-link.btn {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-nav {
+    gap: 30px;
+  }
+}
+
+main {
+  background-color: rgba(232, 245, 233, 0.3);
+  padding: 2rem 0;
+  margin: 2rem 0;
+  border-radius: 15px;
+}
+
+/* CONTATO */
+.contact-info .lead {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.map-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  margin: 2rem 0;
+}
+
+.contact-details {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--sombra);
+}
+
+.contact-details li {
+  padding: 0.8rem;
+  border-bottom: 1px solid rgba(44, 95, 45, 0.1);
+}
+
+.contact-details a {
+  color: var(--verde-escuro);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.contact-details a:hover {
+  color: #1e401f;
+}
+
+/*  ESTRUTURA  */
+
+.list-group-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-color: rgba(44, 95, 45, 0.1);
+  font-size: 1.1rem;
+  padding-left: 2rem;
+  position: relative;
+}
+
+.list-group-item::before {
+  content: "•";
+  color: var(--verde-escuro);
+  font-weight: bold;
+  position: absolute;
+  left: 1rem;
+}
+
+/* Carrossel */
+.carousel {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  background: rgba(0, 0, 0, 0.05);
+  margin: 2rem 0;
+}
+
+.image-container {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f8f9fa;
+}
+
+.carousel-item img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.carousel-item:hover img {
+  transform: scale(1.02);
+}
+
+.carousel-caption {
+  background: rgba(44, 95, 45, 0.9);
+  border-radius: 5px;
+  padding: 15px 25px;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  max-width: 90%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
