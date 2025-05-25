@@ -1,63 +1,27 @@
-const express = require("express");
-const odbc = require("odbc");
-const cors = require("cors");
+const express = require('express');
+require('./jobs/checkQuarto');
+const cors = require('cors');
+
 const app = express();
+const PORT = 3000;
+
 
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public')); 
 
-const connectionString = "DSN=PousadaDB;";
 
-// Criar reserva
-app.post("/api/reservas", async (req, res) => {
-  const {
-    IDQuarto,
-    DataEntrada,
-    DataSaida,
-    Status_pagamento,
-    condicoes,
-    IDHospede,
-  } = req.body;
+app.use('/quartos', require('./routes/quartos'));     
+app.use('/hospedes', require('./routes/hospedes'));   
+app.use('/reservas', require('./routes/reservas'));
+app.use('/contato', require('./routes/contato'))
+app.use('/estrutura', require('./routes/estrutura'))
 
-  try {
-    const connection = await odbc.connect(connectionString);
-    const query = `
-      INSERT INTO Reserva (
-        IDQuarto, 
-        DataEntrada, 
-        DataSaida, 
-        Status_pagamento, 
-        condicoes, 
-        IDHospede
-      ) VALUES (?, ?, ?, ?, ?, ?)
-    `;
-    await connection.query(query, [
-      IDQuarto,
-      DataEntrada,
-      DataSaida,
-      Status_pagamento ? 1 : 0,
-      condicoes,
-      IDHospede,
-    ]);
-    res.json({ success: true, message: "Reserva salva!" });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
+// Catch de erro abaixo
+app.use((req, res) => {
+  res.status(404).json({ error: 'Rota não encontrada' });
 });
-
-// Buscar todas as reservas
-app.get("/api/reservas", async (req, res) => {
-  try {
-    const connection = await odbc.connect(connectionString);
-    const result = await connection.query("SELECT * FROM Reserva");
-    res.json(result);
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-});
-
-// Iniciar servidor
-const PORT = 3000;
+// Se der certo vai exibir abaixo v
 app.listen(PORT, () => {
-  console.log(`API rodando em http://localhost:${PORT}`);
+  console.log(`Servidor rodando em http://localhost:${PORT}`);
 });
