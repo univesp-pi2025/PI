@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reservas - Pousada Patrimônio de Brotas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/6.4.2/imask.min.js"></script>
+</head>
+<body>
+  <header class="header-bg">
+    <div class="container text-center">
+      <img src="imagens/topo2.png" alt="Pousada Patrimônio de Brotas" class="img-fluid" />
+    </div>
+  </header>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav w-100 justify-content-between gap-3">
+          <li class="nav-item flex-fill">
+            <a class="nav-link btn btn-success text-white" href="index.html">Início</a>
+          </li>
+          <li class="nav-item flex-fill">
+            <a class="nav-link btn btn-success text-white" href="contato.html">Contato</a>
+          </li>
+          <li class="nav-item flex-fill">
+            <a class="nav-link btn btn-success text-white" href="estrutura.html">Estrutura</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container my-5 main-content">
+    <section>
+      <h1 class="text-center mb-4">Reservar</h1>
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-8">
+          <div class="card shadow-sm border-0">
+            <div class="card-body">
+              <form id="formReserva" method="POST" class="row g-3 needs-validation" novalidate>
+                <div class="col-md-6">
+                  <label for="nome" class="form-label">Nome Completo</label>
+                  <input type="text" class="form-control" id="nome" name="nome" required />
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">E-mail</label>
+                  <input type="email" class="form-control" id="email" name="email" required />
+                </div>
+                <div class="col-md-6">
+                  <label for="cpf" class="form-label">CPF</label>
+                  <input type="text" class="form-control" id="cpf" name="cpf" required />
+                </div>
+                <div class="col-md-6">
+                  <label for="telefone" class="form-label">Telefone</label>
+                  <input type="tel" class="form-control" id="telefone" name="telefone" required />
+                </div>
+                <div class="col-md-6">
+                  <label for="hospedes" class="form-label">Número de Hóspedes</label>
+                  <input type="number" class="form-control" id="hospedes" name="hospedes" min="1" required />
+                </div>
+                <div class="col-md-6">
+                  <label for="checkin" class="form-label">Check-in</label>
+                  <input type="date" class="form-control" id="checkin" name="checkin" required />
+                </div>
+                <div class="col-md-6">
+                  <label for="checkout" class="form-label">Check-out</label>
+                  <input type="date" class="form-control" id="checkout" name="checkout" required />
+                </div>
+                <div class="col-md-6">
+                  <label for="quarto" class="form-label">Quarto</label>
+                  <select id="quarto" name="quarto" class="form-select" required>
+                    <option selected disabled value="">Selecione um quarto</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <button type="submit" class="btn btn-success">Enviar Reserva</button>
+                  <a href="index.html" class="btn btn-outline-success ms-2">Cancelar</a>
+                </div>
+              </form>
+
+              <div id="confirmacaoReserva" class="mt-4 d-none">
+                <div class="alert alert-success">
+                  <h4 class="alert-heading">📨 Solicitação Recebida!</h4>
+                  <div id="detalhesReserva"></div>
+                  <hr />
+                  <p class="mb-0">
+                    Você receberá um e-mail de confirmação em <strong id="emailConfirmacao"></strong>
+                  </p>
+                  <button onclick="window.location.href='index.html'" class="btn btn-success mt-3">Voltar ao Início</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-dark text-white py-4">
+    <div class="container text-center">
+      <p class="mb-0">&copy; 2025 Pousada Patrimônio de Brotas - Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/reservas.js"></script>
+</body>
+</html>
